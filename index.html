@@ -76,8 +76,8 @@
         </div>
     </header>
     <!--END NAV SECTION -->
-
-            <iframe id="fileFrame" src="about:blank"></iframe>
+<div id="main">main default</div>
+    
     <!--FOOTER SECTION -->
     <footer id="footer">
         <div class="row">
@@ -102,10 +102,7 @@
     <script src="scripts/custom.js"></script>
 
     <script type="text/javascript">
-    var doc = document.getElementById('fileFrame').contentWindow.document;
-    doc.open();
-    doc.write('<html><head><title></title></head><body>Hello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello worldHello world.</body></html>');
-    doc.close();
+    $('#main').load('browser.html');
     </script>
 
 </body>
