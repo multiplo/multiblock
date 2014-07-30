@@ -41,7 +41,7 @@ h6 {
 }
 
 .icon-round {
-    margin-top:30px;
+  margin-top:30px;
   font-size: 24px;
   height: 68px;
   width: 68px;
@@ -137,7 +137,7 @@ a:focus {
   outline: none;
 }
 .small-icons {
-       margin-top:0px;
+  margin-top:0px;
   font-size: 24px;
   height: 40px;
   width: 40px;
@@ -154,7 +154,7 @@ a:focus {
     =====================================================*/
 
 #header-nav {
-    position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -287,134 +287,6 @@ color: #fff;
 .portfolio-item:hover .overlay {
   opacity: 1;
 }
-
-
-/*==========================================
-   SLIDE SECTION / CAROUSEL SECTION
-    =====================================================*/
-
-#slide-head {
-  padding: 100px 0px 50px 0px;
-color: #022406;
-background-color: rgb(19, 170, 74);
-}
-#slide-head .prev,
-#slide-head .next {
-  position: absolute;
-  top: 65%;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #fff;
-  display: inline-block;
-  margin-top: -50px;
-  font-size: 24px;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  z-index: 5;
-}
-#slide-head .prev:hover,
-#slide-head .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-#slide-head .prev {
-  left: 10px;
-}
-#slide-head .next {
-  right: 10px;
-}
-#slide-head .item {
-  -moz-transition: opacity ease-in-out 500ms;
-  -o-transition: opacity ease-in-out 500ms;
-  -webkit-transition: opacity ease-in-out 500ms;
-  transition: opacity ease-in-out 500ms;
-  left: 0 !important;
-  opacity: 0;
-  top: 0;
-  position: absolute;
-  width: 100%;
-  display: block !important;
-  z-index: 1;
-  text-align: center;
-}
-#slide-head .item:first-child {
-  top: auto;
-  position: relative;
-}
-#slide-head .item.active {
-  opacity: 1;
-  -moz-transition: opacity ease-in-out 500ms;
-  -o-transition: opacity ease-in-out 500ms;
-  -webkit-transition: opacity ease-in-out 500ms;
-  transition: opacity ease-in-out 500ms;
-  z-index: 2;
-}
-#slide-head .item.active h1 {
-  -webkit-animation: scaleUp 400ms;
-  -moz-animation: scaleUp 400ms;
-  -o-animation: scaleUp 400ms;
-  -ms-animation: scaleUp 400ms;
-  animation: scaleUp 400ms;
-}
-
-#slide-head h1 {
-  font-size: 68px;
-  text-shadow: 0 3px rgba(0, 0, 0, 0.1);
-  color: #fff;
-}
- /* Smooth Animation */ 
-@keyframes scaleUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@-moz-keyframes scaleUp {
-  0% {
-    opacity: 0;
-    -moz-transform: scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: scale(1);
-  }
-}
-@-webkit-keyframes scaleUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-  }
-}
-@-ms-keyframes scaleUp {
-  0% {
-    opacity: 0;
-    -ms-transform: scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    -ms-transform: scale(1);
-  }
-}
-@-o-keyframes scaleUp {
-  0% {
-    opacity: 0;
-    -o-transform: scale(0.3);
-  }
-  100% {
-    opacity: 1;
-    -o-transform: scale(1);
-  }
-}
 /*==========================================
    PRICING SECTION
     =====================================================*/
@@ -496,7 +368,13 @@ background-color: rgb(19, 170, 74);
     =====================================================*/
 
 #footer {
-    padding:20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    z-index: 99999;
+    
     background-color:rgb(19, 170, 74);
     text-align:right;
     padding-right:50px;
