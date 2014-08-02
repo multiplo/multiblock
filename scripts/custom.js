@@ -18,14 +18,14 @@ jQuery(function ($) {
 
 
     // LINKS SCROLLING FUNCTION 
-	$('.navbar-nav > li').click(function(event) {
+	/*$('.navbar-nav > li').click(function(event) {
 		event.preventDefault();
 		var target = $(this).find('>a').prop('hash');
 		$('html, body').animate({
 			scrollTop: $(target).offset().top
 		}, 500);
 	});
-
+*/
 	
 
     /*==========================================
@@ -42,6 +42,22 @@ $(document).ready(function() {
     $( "#my_button" ).click(function() {
        sayHello();
     });
+
+
+    $( "#run" ).click(function() {
+       
+        $.ajax({
+          url: "browser.html",
+          cache: false
+        })
+          .done(function( html ) {
+            $( "#main" ).html( html );
+          });
+
+    });
+
+
+
      /*   $( "#my_button2" ).click(function() {
         alert('test');
 
@@ -65,8 +81,6 @@ $(document).ready(function() {
 */
 
 
-
-
     $.ajax({
       url: "browser.html",
       cache: false
@@ -74,8 +88,6 @@ $(document).ready(function() {
       .done(function( html ) {
         $( "#main" ).append( html );
       });
-
-
 });
 
 
@@ -94,7 +106,7 @@ function sayHello(){
 $( 'body' ).on('click','div.my_button2',function() {
       sayHello();
     });
-    
+
 $(document).ready(function()
 {
    sayHello();
