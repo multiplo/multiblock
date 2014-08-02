@@ -92,12 +92,15 @@
 
 
 	$.ajax({
-	  url: "http://multiplo.org/index.html",
+	  url: "http://multiplo.org/multiPLY/index.html",
 	  cache: false
 	})
 	  .done(function( html ) {
 	    $( "#main" ).html( html );
-	  });
+	  })
+	  .fail(function (html) {
+	  	alert("something went wrong!"); 
+	  })
 	//  $( "#main" ).show( "slow" );
   });
 
