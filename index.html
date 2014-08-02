@@ -28,19 +28,19 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-      <style>
-    html, body {
-      height: 100%;
-    }
+    <style>
+        html, body {
+          height: 100%;
+        }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border-style: solid;
-      border-color: #ddd;
-      border-width: 0 1px 1px 0;
-    }
-  </style>
+        iframe {
+          width: 100%;
+          height: 100%;
+          border-style: solid;
+          border-color: #ddd;
+          border-width: 0 1px 1px 0;
+        }
+    </style>
 
 </head>
 
@@ -89,13 +89,20 @@
     </footer>
     <!--END FOOTER SECTION -->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- REQUIRED PHONEGAP LIBRARY (IT WILL SHOW 404 ERROR ON REGULAR BROWSERS) -->
+    <script type="text/javascript" src="cordova.js"></script>    
     <!-- CORE JQUERY LIBRARY -->
     <script src="js/jquery.js"></script>
     <!-- BOOTSTRAP SCRIPTS LIBRARY -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- LIBRARY THAT LOADS COMMUNICATION WITH HARDWARE THROUGH API-->
+    <script src="js/app.js"></script>
     <!-- CUSTOM SCRIPT-->
     <script src="scripts/custom.js"></script>
-
+    <!-- PRE-LOAD BLOCKLY-->
+    <script type="text/javascript" src="js/blockly_compressed.js"></script>
+    <script type="text/javascript" src="js/blocks_compressed.js"></script>
+    <script type="text/javascript" src="js/en.js"></script>
 
 </body>
 </html>

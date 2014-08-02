@@ -72,6 +72,37 @@
 	//  $( "#main" ).show( "slow" );
   });
 
+ $( "#project4" ).click(function() {
+     //$( "#main" ).hide( "slow" );
+
+
+	$.ajax({
+	  url: "examples/axel/index.html",
+	  cache: false
+	})
+	  .done(function( html ) {
+	    $( "#main" ).html( html );
+	  });
+	//  $( "#main" ).show( "slow" );
+  });
+
+
+ $( "#project5" ).click(function() {
+     //$( "#main" ).hide( "slow" );
+
+
+	$.ajax({
+	  url: "http://multiplo.github.io/multiblock/examples/maxBlocks/index.html",
+	  cache: false
+	})
+	  .done(function( html ) {
+	    $( "#main" ).html( html );
+	  });
+	//  $( "#main" ).show( "slow" );
+  });
+
+
+
 /*
     $.ajax({
       url: "examples/fixed/index.html",

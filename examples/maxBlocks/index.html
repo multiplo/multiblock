@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Maximum Block Limit</title>
-  <script type="text/javascript" src="../../js/blockly_compressed.js"></script>
-  <script type="text/javascript" src="../../js/blocks_compressed.js"></script>
-  <script type="text/javascript" src="../../js/en.js"></script>
+  <script type="text/javascript" src="js/blockly_compressed.js"></script>
+  <script type="text/javascript" src="js/blocks_compressed.js"></script>
+  <script type="text/javascript" src="js/en.js"></script>
   <style>
     body {
       background-color: #fff;
@@ -80,7 +80,7 @@
 
   <script>
     Blockly.inject(document.getElementById('blocklyDiv'),
-        {path: '../../', maxBlocks: 5, toolbox: document.getElementById('toolbox')});
+        {path: 'multiblock/multiblock/', maxBlocks: 5, toolbox: document.getElementById('toolbox')});
 
     function onchange() {
       document.getElementById('capacity').innerHTML = Blockly.mainWorkspace.remainingCapacity();

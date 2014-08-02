@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+    example of bluetooth commander application for multiplo robots / howio educational project
+    rudi copyleft license @2014
+-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name = "format-detection" content = "telephone=no"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+   
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <title>HATCH!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <a href="http://howio.org/about-us">POWERED by <strong>howIO</strong></a>
+            <span class="right">
+                <a href="http://www.coderedrobotics.com" target="_blank">CONTENT  by CodeRedRobotics</a>
+                <a href="http://multiplo.org/"><strong>MULTIPLO inside</strong></a>
+            </span>
+            <div class="clr"></div>
+        </div>  <!--  header -->
+        <h1>Hatch<span>Learn like a chicken!</span></h1>
+        <div id="menu" class="content">
+            <ul class="ca-menu">
+                <li>
+                    <a id="cmd1Button" href="#">
+                        <span class="ca-icon">N</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Play</h2>
+                            <h3 class="ca-sub">Get to know your EggO</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a id="cmd2Button" href="#">
+                        <span class="ca-icon">H</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Adventures</h2>
+                            <h3 class="ca-sub">Let eggO tell you a story</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a id="cmd3Button" href="#">
+                        <span class="ca-icon" id="heart">L</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Learn</h2>
+                            <h3 class="ca-sub">Understanding visually</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a id="cmd4Button" href="#">
+                        <span class="ca-icon">F</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Hack</h2>
+                            <h3 class="ca-sub">Let others</h3>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a id="cmd5Button" href="#">
+                        <span class="ca-icon">K</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Share</h2>
+                            <h3 class="ca-sub">With others..</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="clr"></div>
+
+            <a id="test" href="#">
+                      TEST
+                    </a>
+
+
+        </div><!-- content -->
+  
+       <div id="freedraw">
+              <canvas id="drawhere" width="3300" height="300" style="border:1px solid #aaa"></canvas>
+              
+
+              <div style="display: inline-block; margin-left: 10px">
+                <button id="drawing-mode" class="btn btn-info">Cancela drawing mode</button><br>
+                <button id="clear-canvas" class="btn btn-info">Clear</button><br>
+                <button id="backButton" class="btn btn-info">Back to Menu</button><br>
+
+                <div id="drawing-mode-options">
+                  <label for="drawing-mode-selector">Mode:</label>
+                  <select id="drawing-mode-selector">
+                    <option>Pencil</option>
+                    <option>Circle</option>
+                    <option>Spray</option>
+                    <option>Pattern</option>
+
+                    <option>hline</option>
+                    <option>vline</option>
+                    <option>square</option>
+                    <option>diamond</option>
+                    <option>texture</option>
+                  </select><br>
+
+                  <label for="drawing-line-width">Line width:</label>
+                  <span class="info">30</span><input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+
+                  <label for="drawing-color">Line color:</label>
+                  <input type="color" value="#005E7A" id="drawing-color"><br>
+
+                  <label for="drawing-shadow-color">Shadow color:</label>
+                  <input type="color" value="#005E7A" id="drawing-shadow-color"><br>
+
+                  <label for="drawing-shadow-width">Shadow width:</label>
+                  <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+
+                  <label for="drawing-shadow-offset">Shadow offset:</label>
+                  <span class="info">0</span><input type="range" value="0" min="0" max="50" id="drawing-shadow-offset"><br>
+                </div>
+              </div>
+        </div>  <!--  freedraw -->
+
+        <div id="drive">
+            <ul class="ca-menu2">
+                <li>
+                    <a id="backButton2" href="#">
+                        <span class="ca-icon">N</span>
+                        <div class="ca-content">
+                            <h2 class="ca-main">Back</h2>
+                            <h3 class="ca-sub">to menu</h3>
+                        </div>
+                    </a>
+                </li>
+              </ul>
+              <p>
+                <a id="joy1Button" href="#">&#8594; MOTOR1 FORWARD  </a>
+                <a id="joy2Button" href="#">&#8595; MOTOR1 REVERSE </a>
+                <a id="joy3Button" href="#">&#8600; MOTOR2 FORWARD  </a>
+                <a id="joy4Button" href="#">&#8598; MOTOR2 REVERSE </a>                
+                <a id="joy5Button" href="#">&#8635; ---- STOP --- </a>    
+              </p>
+        </div>  <!--  drive -->
+        <div data-role="page" id="object"> 
+                <div data-role="header" data-position="fixed">
+                  <h1>move it!</h1>
+      
+
+                               <div id="sphere"></div>
+              <ul>
+                <li>acceleration x: <span id="accelerationX"></span>g</li>
+                <li>acceleration y: <span id="accelerationY"></span>g</li>
+                <li>Motors MOD set to: <span id="speed"></span> % avg</li>
+                <li>Motor 1 set to: <span id="motor1"></span> % </li>
+                <li>Motor 2 set to: <span id="motor2"></span> % </li>
+                <a href="#" id="updateButton" data-role="button">  UPDATE SPEED</a>
+              </ul>
+
+              test: <span id="test"></span>
+              </div>
+
+                <div data-role="content">
+                  <div id="obj_wall">
+                    <div id="obj"></div>
+                  </div>
+                  <div>
+                        <a href="#" id="startMove" data-role="button" data-theme="c" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Start Moving</span></span></a>
+                  </div>
+                      <a href="#" id="backButton3" data-role="button">  go Back</a>
+                    </p>
+                </div> 
+        </div>  
+        <div class="footer">
+            <div id="statusMessage"></div>
+            <div id="chat">
+                <form id="chatform">
+                    <textarea id="messages" readonly></textarea>                    
+                    <input type="text" class="topcoat-text-input" id="message" placeholder="Message" />
+
+                </form>
+
+                <div class="center">
+
+                    <a  id="sendButton">Send</a>
+
+                    <a  id="disconnectButton">Disconnect</a>                
+                </div>
+            </div>                
+            <span class="right">
+            <div id="connection">
+                  <div style="margin: 20px">
+                      Device: <br/>
+                      <select id="deviceList">
+                          <option>Discovering...</option>
+                      </select>       
+                  </div>
+                  <p>
+                      <a class="topcoat-button--large is-disabled" id="connectButton">Connect</a>
+
+                      <a  id="debugButton">Debug</a>
+                  </p>
+                  <p>
+                      <a class="topcoat-button--large" id="listButton">List Devices</a>
+                  </p>
+            </div>
+            </span>
+            <div class="clr"></div>
+        </div>  <!-- footer -->
+    </div> <!--  container -->
+
+           
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/draw.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/axel.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="js/ball.js"></script> 
+    <script type="text/javascript">
+          app.initialize();
+    </script>
+    <script>
+          (function() {
+            fabric.util.addListener(fabric.window, 'load', function() {
+              var canvas = this.__canvas || this.canvas,
+                  canvases = this.__canvases || this.canvases;
+
+              canvas && canvas.calcOffset && canvas.calcOffset();
+
+              if (canvases && canvases.length) {
+                for (var i = 0, len = canvases.length; i < len; i++) {
+                  canvases[i].calcOffset();
+                }
+              }
+            });
+          })();
+    </script>
+        
+    </body>
+</html>
