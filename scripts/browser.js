@@ -92,7 +92,7 @@
 
 
 	$.ajax({
-	  url: "http://multiplo.github.io/multiblock/examples/maxBlocks/index.html",
+	  url: "http://multiplo.org/index.html",
 	  cache: false
 	})
 	  .done(function( html ) {
