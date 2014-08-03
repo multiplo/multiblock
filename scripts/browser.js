@@ -105,6 +105,26 @@
   });
 
 
+ $( "#project6" ).click(function() {
+     //$( "#main" ).hide( "slow" );
+
+
+	$.ajax({
+	  url: "http://multiplo.org/multiPLY/index.html",
+	  cache: false
+	})
+	  .done(function( html ) {
+	    $( "#main" ).html( "   <iframe src='http://multiplo.org/multiPLY/index.html'></iframe>  " );
+	  })
+	  .fail(function (html) {
+	  	alert("something went wrong!"); 
+	  })
+	//  $( "#main" ).show( "slow" );
+  });
+
+
+
+     
 
 /*
     $.ajax({
